@@ -1,0 +1,14 @@
+{
+  "restrict": {
+    "version": "p2",
+    "robots": "User-agent: PlantCollector\nDisallow: /notices/\nAllow: /notices/a\n"
+  },
+  "unavailable": {
+    "unavailable": true
+  },
+  "reopen": {
+    "version": "p3",
+    "unavailable": false,
+    "robots": "User-agent: PlantCollector\nAllow: /notices/\n"
+  }
+}

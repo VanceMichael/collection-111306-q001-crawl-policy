@@ -1,0 +1,14 @@
+{
+  "kind": "crawl-policy",
+  "data": {
+    "version": "p1",
+    "agent": "PlantCollector",
+    "robots": "User-agent: *\nDisallow: /internal\n\nUser-agent: PlantCollector\nAllow: /notices/\nDisallow: /notices/draft\n",
+    "links": [
+      "/notices/a",
+      "/notices/draft/b",
+      "/internal/c"
+    ],
+    "unavailable": false
+  }
+}

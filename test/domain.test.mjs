@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {readFile,mkdtemp,rm} from 'node:fs/promises';
+import {tmpdir} from 'node:os';
+import {join} from 'node:path';
+import * as domain from '../src/domain.mjs';
+const data=JSON.parse(await readFile(new URL('../fixtures/source.json',import.meta.url))).data;
+const {declarationLines,preview}=domain;
+test('资料对象的领域边界和原始预览',async()=>{assert.equal(declarationLines('User-agent: X\nDisallow: /a #备注')[1].value, '/a');
+assert.throws(() => declarationLines('broken'));
+assert.equal(preview(data).discovered.length, 3);});
